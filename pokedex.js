@@ -74,29 +74,37 @@ async function getOnePokemon(url) {
     })
     .catch((error) => console.log('Error obteniendo pokemon individual', error));
 }
-
-
-
-function filterByName(list) {
+//?BUSCADOR POR NOMBRE
+function filterByName(pokemons) {
   const pokemonsFiltered$$ = [];
-  for (let pokemon of list) {
-    
+  for (let pokemon of pokemons) {
     if (pokemon.name.includes(searcher$$.value)) {
       pokemonsFiltered$$.push(pokemon);
     } 
   }
 
-  
   if(pokemonsFiltered$$.length === 0){
-
-    notFound$$.classList.add('notfound-display') 
+    notFound$$.classList.add('notfound-display'); 
   } else {
     notFound$$.classList.remove('notfound-display');
   }
 
-
   renderPokedex(pokemonsFiltered$$);
+}
 
+function filterbyType(value, pokemons){
+  //console.log(value);
+  const pokemonsFilteredType$$ = [];
+    for (let pokemon of pokemons) {
+      //console.log(pokemon);
+      for (let type of pokemon.types) {
+        if (type.type.name.includes(value))
+        pokemonsFilteredType$$.push(pokemon);
+      }
+    }
+
+  console.log(pokemonsFilteredType$$);
+  renderPokedex(pokemonsFilteredType$$);
 }
   
 function setTypeColors(type) {
@@ -154,17 +162,13 @@ function renderPokedex(pokemons){
 
 //? Creando opciones para meter en la lista de tipos
 const typeSelector$$ = document.querySelector('.types-selector');
-typeSelector$$.addEventListener('input', () => console.log(typeSelector$$.value));
+typeSelector$$.addEventListener('input', () => filterbyType(typeSelector$$.value, POKEMONS_INFO));
 for (let type in typeColors) {
     
     const typeOption$$ = document.createElement('option');
     
-    
     typeOption$$.textContent = type;
     typeOption$$.setAttribute('value', type);
-    
-    //typeOption$$.addEventListener('click', console.log(typeOption$$.value))
-
     typeSelector$$.appendChild(typeOption$$);
 
   }
