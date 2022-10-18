@@ -77,6 +77,18 @@ header nav {
   gap: 100px;
 }
 
+.notfound {
+  font-size: 50px;
+  font-weight: bolder;
+  color: red;
+  display: none;
+
+}
+
+.notfound-display {
+  display:block;
+}
+
 /* POKEDEX */
 
 body {
@@ -112,7 +124,7 @@ body {
 }
 
 .card:hover {
-  animation: bounce 0.5s linear;
+  background-color: rgb(255, 204, 173);
 }
 
 .pick-container {
