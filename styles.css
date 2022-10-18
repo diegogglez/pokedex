@@ -1,8 +1,90 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-  background-color: orangered;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* HEADER */
+
+header {
+  /* background-color: #222; */
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+header h1 {
+  font-weight: bolder;
+  font-size: 30px;
+  color: whitesmoke;
+  background-color: rgb(15, 15, 15);
+  width: 100%;
+  padding: 15px 0px;
+}
+
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+/* POKEDEX */
+
+body {
+  background-color: white;
   margin: 0;
-  font-family: rubik;
-  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(21, 21, 21);
+  text-align: center;
 }
 
 #pokedex {
@@ -15,15 +97,73 @@ body {
 }
 
 .card {
+  /* border-radius: 5px; */
   list-style: none;
-  width: 150px;
-  height: 250px;
+  width: 250px;
+  height: 320px;
+  padding: 10px;
   text-align: center;
-  border: 1px solid black;
-  background-color: #f4f4f4;
+  background-color: #dfeff4;
   color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card:hover {
   animation: bounce 0.5s linear;
+}
+
+.pick-container {
+  display: flex;
+  height: 60%;
+  width: 85%;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+
+.info-container {
+  background-color: white;
+  /* border-radius: 5px; */
+  padding: 5px;
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.info-container h2 {
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.typesContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.typeName {
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: whitesmoke
+}
+
+.pokemonId {
+  color: rgb(167, 167, 167);
+  font-weight: 600;
 }
