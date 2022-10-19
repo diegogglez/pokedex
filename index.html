@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles.css">
+  <script src="./helpers.js" defer></script>
   <script src="./pokedex.js" defer></script>
   <title>Pokedex</title>
 </head>
@@ -13,12 +14,14 @@
     <h1>POKEDEX</h1>
     <nav>
       <label>
-        <span>Filter by name</span>
-        <input class="searcher">
+        <span class="filter-label">Name</span>
+        <input class="searcher" placeholder="Enter pokemon name">
       </label>
       <label>
-        <span>Type</span>
-        <select name="Types" class="types-selector"></select>
+        <span class="filter-label">Type</span>
+        <select name="Types" class="types-selector">
+          <option value="Select">Select</option>
+        </select>
       </label>
     </nav>
   </header>

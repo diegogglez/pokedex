@@ -80,7 +80,7 @@ header nav {
 .notfound {
   font-size: 50px;
   font-weight: bolder;
-  color: red;
+  color: #e73820;
   display: none;
 
 }
@@ -89,6 +89,20 @@ header nav {
   display:block;
 }
 
+.filter-label {
+  font-weight: bold;
+  color: #0f0f0f;
+}
+
+.types-selector {
+  font-size: 16px;
+  background-color: #0f0f0f;
+  color: whitesmoke;
+  width: 100px;
+  font-weight: bold;
+  padding: 3px;
+  border-radius: 5px;
+}
 /* POKEDEX */
 
 body {
@@ -115,7 +129,7 @@ body {
   height: 320px;
   padding: 10px;
   text-align: center;
-  background-color: #dfeff4;
+  background-color: #ebe8f2;
   color: #222;
   display: flex;
   flex-direction: column;
@@ -124,7 +138,7 @@ body {
 }
 
 .card:hover {
-  background-color: rgb(255, 204, 173);
+  animation: bounce 0.5s linear;
 }
 
 .pick-container {
@@ -146,8 +160,8 @@ body {
 .info-container {
   background-color: white;
   /* border-radius: 5px; */
-  padding: 5px;
-  height: 25%;
+  /* padding: 5px; */
+  height: 26%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -159,6 +173,7 @@ body {
 .info-container h2 {
   font-size: 20px;
   text-transform: capitalize;
+  margin-left: 5px;
 }
 
 .typesContainer {
@@ -172,10 +187,12 @@ body {
 .typeName {
   padding: 5px 10px;
   border-radius: 3px;
-  color: whitesmoke
+  color: whitesmoke;
+  margin-left: 5px;
 }
 
 .pokemonId {
   color: rgb(167, 167, 167);
   font-weight: 600;
+  margin-left: 5px;
 }
