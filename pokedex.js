@@ -38,24 +38,32 @@ const filterByName = (pokemons) => {
       pokemonsFiltered$$.push(pokemon);
     }
   }
-
+  //Si el .length es 0, no ha encontrado nada y añadimos la clase con el display del mensaje de notfound
   if (pokemonsFiltered$$.length === 0) {
     notFound$$.classList.add("notfound-display");
   } else {
+    //Si .length !== 0, ha encontrado algo y le quitamos la clase para que no se vea el mensaje
     notFound$$.classList.remove("notfound-display");
   }
 
   renderPokedex(pokemonsFiltered$$);
 };
+
 //?BUSCADOR POR TIPO
 const filterbyType = (value, pokemons) => {
   const pokemonsFilteredType$$ = [];
   for (let pokemon of pokemons) {
     for (let item of pokemon.types) {
-      if (item.type.name.includes(value)) pokemonsFilteredType$$.push(pokemon);
+      if (item.type.name.includes(value) || value === 'Select') {
+        pokemonsFilteredType$$.push(pokemon);
+      }    
     }
   }
 
+  //inputSelected$$ = document.querySelector('[value="Select"]');
+  // console.log('value de la funion',value);
+  //console.log('value del option select',inputSelected$$.value)
+  
   //console.log(pokemonsFilteredType$$);
   renderPokedex(pokemonsFilteredType$$);
 }
