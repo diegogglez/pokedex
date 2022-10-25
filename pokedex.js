@@ -6,7 +6,7 @@ notFound$$.textContent = "Ese pokemon no existe...DE MOMENTO";
 notFound$$.classList.add("notfound");
 document.body.appendChild(notFound$$);
 
-//?Peticiones a la api
+//?PETICIONES A LA API
 //Guardamos el primer fetch en la funcion getAllPokemos
 const getAllPokemons = async () => {
   return fetch("https://pokeapi.co/api/v2/pokemon?limit=150")
@@ -56,14 +56,18 @@ const filterbyType = (value, pokemons) => {
     for (let item of pokemon.types) {
       if (item.type.name.includes(value) || value === 'Select') {
         pokemonsFilteredType$$.push(pokemon);
-      }    
+      }  
+      /* if (item.type.name.includes(value)) {
+        pokemonsFilteredType$$.push(pokemon);
+      }  else if (value === 'select') {
+        renderPokedex(pokemons);
+      } */
     }
   }
-
+  //! duplica los de doble tipo
   //inputSelected$$ = document.querySelector('[value="Select"]');
   // console.log('value de la funion',value);
-  //console.log('value del option select',inputSelected$$.value)
-  
+  //console.log('value del option select',inputSelected$$.value)  
   //console.log(pokemonsFilteredType$$);
   renderPokedex(pokemonsFilteredType$$);
 }
@@ -130,7 +134,7 @@ const renderPokedex = (pokemons) => {
   }
 }
 
-//* funcion que inicia la página
+//? funcion que inicia la página
 const init = async () => {
   //guardamos el valor de la funcion getAllPokemos (objeto) en una variable, e iteramos sobre el para
   //conseguir la url de cada pokemon
